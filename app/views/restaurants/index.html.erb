@@ -1,0 +1,23 @@
+<div class="container mt-5 mb-5">
+  <div class="d-flex justify-content-center">
+    <div class="col-12 col-md-10 ">
+      <h1>Restaurants</h1>
+
+      <%= link_to new_restaurant_path do %>
+        <i class="fas fa-plus mb-3 big-icon"></i>
+      <% end %>
+
+      <div class="cards">
+        <% @restaurants.each do |restaurant| %>
+        <div class="card-trip card-bw p-3">
+        <%= image_tag "https://loremflickr.com/320/240/#{restaurant.name}" %>
+          <div><%= link_to '', restaurant_path(restaurant), class: 'card-trip-link' %></div>
+          <h3><%= restaurant.name %></h3>
+          <p class="mb-0"><%= restaurant.address %></p>
+          <p><%= restaurant.phone_number %></p>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
